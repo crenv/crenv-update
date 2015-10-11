@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# Summary: Self-update crenv and crenv plugins
+#
+# Usage: crenv update
+#
+set -e
+[ -n "$CRENV_DEBUG" ] && set -x
+
+indent_output() {
+  while read data; do
+    echo -e " \033[1;32m|\033[0m  $data"
+  done
+}
+
+is_crenv_git_repo() {
+  $(git remote -v | grep -E 'crenv|crystal-build' &>/dev/null)
+}
+
+crenv_update() {
+  echo -e "\033[1;32mupdating $1\033[0m"
+  if is_crenv_git_repo; then
+    git pull --no-rebase --ff 2>&1 | indent_output
+  else
+    echo -e "Not an crenv git repo; skipping..." | indent_output
+  fi
+  echo
+}
+
+cd "$(dirname $(which crenv))"
+crenv_update crenv
+
+cd "${CRENV_ROOT:-$(crenv root)}"
+for plugin in plugins/*; do
+  pushd $plugin >/dev/null
+  crenv_update `basename $plugin`
+  popd >/dev/null
+done
