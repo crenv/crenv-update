@@ -8,7 +8,7 @@ setup() {
 }
 
 @test "update shell" {
-  CRENV_SHELL=bash
+  export CRENV_SHELL=bash
 
   run crenv-sh-update
 
@@ -17,7 +17,7 @@ setup() {
 }
 
 @test "update shell (fish)" {
-  CRENV_SHELL=fish
+  export CRENV_SHELL=fish
 
   run crenv-sh-update
 
