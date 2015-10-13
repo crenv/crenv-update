@@ -10,7 +10,7 @@ setup() {
 create_shims() {
   local shims="${CRENV_ROOT}/shims/"
 
-	mkdir -p "${shims}"
+  mkdir -p "${shims}"
   touch "${shims}/$1"
   chmod +x "${shims}/$1"
 }
@@ -21,11 +21,11 @@ create_repository() {
 }
 
 @test "update crenv" {
-	create_shims "crenv"
+  create_shims "crenv"
   create_repository "$CRENV_ROOT/shims/" "crenv"
   mkdir -p "$CRENV_ROOT/plugins/"
 
-	run crenv-update
+  run crenv-update
 
   assert_success
   assert_line 0 "updating crenv"
@@ -34,11 +34,11 @@ create_repository() {
 }
 
 @test "update crystal-build" {
-	create_shims "crenv"
+  create_shims "crenv"
   create_repository "$CRENV_ROOT/shims/" "crenv"
   create_repository "$CRENV_ROOT/plugins/crystal-build/" "crystal-build"
 
-	run crenv-update
+  run crenv-update
 
   assert_success
   assert_line 3 "updating crystal-build"
@@ -47,10 +47,10 @@ create_repository() {
 }
 
 @test "update not crenv git repository" {
-	create_shims "crenv"
+  create_shims "crenv"
   mkdir -p "$CRENV_ROOT/shims/"
 
-	run crenv-update
+  run crenv-update
 
   assert_success
   assert_line 0 "updating crenv"
@@ -58,11 +58,11 @@ create_repository() {
 }
 
 @test "update not crystal-build git repository" {
-	create_shims "crenv"
+  create_shims "crenv"
   create_repository "$CRENV_ROOT/shims/" "crenv"
   mkdir -p "$CRENV_ROOT/plugins/crystal-build/"
 
-	run crenv-update
+  run crenv-update
 
   assert_success
   assert_line 3 "updating crystal-build"
