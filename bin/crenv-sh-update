@@ -7,15 +7,15 @@ shell="$(basename "${CRENV_SHELL:-$SHELL}")"
 case "$shell" in
 fish )
   echo -n "$(which crenv-update); and "
-  echo -n 'echo -e "\033[1;32mreloading crenv\033[0m"; and '
+  echo -n 'echo -e "reloading crenv"; and '
   echo -n '. (crenv init - | psub); and '
-  echo -n 'echo -e " \033[1;32m|\033[0m  done"'
+  echo -n 'echo -e " | done"'
   ;;
 * )
   echo -n "$(which crenv-update) && "
-  echo -n 'echo -e "\033[1;32mreloading crenv\033[0m" && '
+  echo -n 'echo -e "reloading crenv" && '
   echo -n 'eval "$(crenv init -)" && '
-  echo -n 'echo -e " \033[1;32m|\033[0m  done"'
+  echo -n 'echo -e " | done"'
   ;;
 esac
 

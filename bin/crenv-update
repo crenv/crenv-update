@@ -9,7 +9,7 @@ set -e
 
 indent_output() {
   while read data; do
-    echo -e " \033[1;32m|\033[0m  $data"
+    echo -e " | $data"
   done
 }
 
@@ -18,7 +18,7 @@ is_crenv_git_repo() {
 }
 
 crenv_update() {
-  echo -e "\033[1;32mupdating $1\033[0m"
+  echo -e "updating $1"
   if is_crenv_git_repo; then
     git pull --no-rebase --ff 2>&1 | indent_output
   else
@@ -32,7 +32,9 @@ crenv_update crenv
 
 cd "${CRENV_ROOT:-$(crenv root)}"
 for plugin in plugins/*; do
-  pushd $plugin >/dev/null
-  crenv_update `basename $plugin`
-  popd >/dev/null
+  if [ -d "$plugin" ]; then
+    pushd $plugin >/dev/null
+    crenv_update `basename $plugin`
+    popd >/dev/null
+  fi
 done
