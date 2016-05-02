@@ -1,13 +1,13 @@
-# crenv-update [![Build Status](https://travis-ci.org/pine613/crenv-update.svg?branch=master)](https://travis-ci.org/pine613/crenv-update)
+# crenv-update [![Build Status](https://travis-ci.org/pine/crenv-update.svg?branch=master)](https://travis-ci.org/pine/crenv-update)
 
-This [crenv](https://github.com/pine613/crenv) plugin adds the `crenv update` command that updated crenv and all installed plugins.
+This [crenv](https://github.com/pine/crenv) plugin adds the `crenv update` command that updated crenv and all installed plugins.
 
 ## Installation
 
 Simply clone the repository into the plugins directory:
 
 ```sh
-$ git clone https://github.com/pine613/crenv-update.git "$(crenv root)/plugins/crenv-update"
+$ git clone https://github.com/pine/crenv-update.git "$(crenv root)/plugins/crenv-update"
 ```
 
 ## Usage
