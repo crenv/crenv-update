@@ -1,4 +1,4 @@
-# crenv-update [![Build Status](https://travis-ci.org/pine/crenv-update.svg?branch=master)](https://travis-ci.org/pine/crenv-update)
+# crenv-update [![Build Status](https://img.shields.io/travis/pine/crenv-update/master.svg?style=flat-square)](https://travis-ci.org/pine/crenv-update)
 
 This [crenv](https://github.com/pine/crenv) plugin adds the `crenv update` command that updated crenv and all installed plugins.
 
