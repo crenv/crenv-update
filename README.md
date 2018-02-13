@@ -19,4 +19,4 @@ $ crenv update
 
 ## Acknowledgement
 
-- [rkh](https://github.com/rkh) crenv-update is copied code from [rbenv-update](https://github.com/rkh/rbenv-update). Thank you.
+- [@rkh](https://github.com/rkh) crenv-update is copied code from [rbenv-update](https://github.com/rkh/rbenv-update). Thank you.
