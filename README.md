@@ -7,6 +7,7 @@ This [crenv](https://github.com/pine/crenv) plugin adds the `crenv update` comma
 Simply clone the repository into the plugins directory:
 
 ```sh
+$ mkdir -p "$(crenv root)/plugins"
 $ git clone https://github.com/crenv/crenv-update.git "$(crenv root)/plugins/crenv-update"
 ```
 
